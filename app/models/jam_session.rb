@@ -1,4 +1,6 @@
 class JamSession < ApplicationRecord
-  has_many :posts, :requests
+  has_many :requests
+  has_many :posts
   belongs_to :user
 end
+

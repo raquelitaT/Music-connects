@@ -1,32 +1,37 @@
 class RequestsController < ApplicationController
-    def new
-        @user = User.new
+
+  def index
+    @jamsession = JamSession.find(params[:jam_session_id])
+    @requests = Request.all
+  end
+
+  def new
+    @jamsession = JamSession.find(params[:jam_session_id])
+    @request = Request.new
+  end
+
+  # def create
+  #   @jamsession = JamSession.find(params[:jam_session_id])
+  #   @request = Request.new(strong_params)
+  #   @request.user_id = current_user.id
+  # end
+
+   #   def accept
+    #     @jamsession = Jamsession.find(params[:id])
+    #     @jamsession.status = "Accept"
+    #     @jamsession.save
+    #     redirect_to users_path
+    #   end
+
+    #   def decline
+    #     @jamsession = Jamsession.find(params[:id])
+    #     @jamsession.status = "Declined"
+    #     @jamsession.save
+    #     redirect_to users_path
+    #   end
+
+  private
+    def strong_params
+      params.require(:requests).permit(:status)
     end
-    def index
-        if params[:status] == 'Accept'
-            @_current_users = Current_user.accept
-        else
-            @_current_users = Current_user.decline
-        end
-
-    def create
-        @_current_user = Current_user.new(param[:user])
-        if @_current_user.save
-            redirect_to users_path
-        else
-            render :new
-        end
-            
-    def destroy
-        session.delete(:current_user_id)
-        @_current_user = nil
-        redirect_to root_url
-    end
-
-    private
-      def strong_params
-        params.require(:requests).permit(:status)
-      end
-
-
 end
