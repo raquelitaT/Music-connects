@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :requests
   has_many :posts
   has_many :user_instruments, :through => :instruments
+  has_one :profile_image
 end
