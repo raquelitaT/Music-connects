@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_many :user_instruments
   has_many :requests
   has_many :posts
-  has_many :user_instruments, :through => :instruments
-  has_one :profile_image
+  has_many :user_instruments, through: :instruments
+  has_one_attached :profile_image
 end
