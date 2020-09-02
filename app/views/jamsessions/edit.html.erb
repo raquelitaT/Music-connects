@@ -1,1 +1,22 @@
+<div class="form-container">
+  <div class="row">
+    <div class="col-4 offset-4">
+      <br>
+        <br>
+          <h3>Create your jam session:</h3>
+            <br>
+              <%= simple_form_for @jamsession, url: jamsessions_path do |f| %>
+              <%= f.input :title, label: "Title:" %>
+              <%= f.input :description, label: "Description:" %>
+              <%= f.input :location, label: "Location:" %>
+              <%= f.input :starts_at, label: "Starts at:" , as: :datetime, html5: true %>
+              <%= f.input :ends_at, label: "Ends at:" , as: :datetime, html5: true %>
+              <%= f.input :max_capacity, label: "Maximum capacity:" %>
+              <%= f.input :image, as: :file, label: "Image:" %>
+          <%= f.submit "Submit", class: "btn btn-outline-light" %>
+       <% end %>
+    </div>
+  </div>
+</div>
+
 

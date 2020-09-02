@@ -12,6 +12,7 @@ require "open-uri"
 puts "Cleaning database"
 JamSession.destroy_all
 User.destroy_all
+Instrument.destroy_all
 puts 'Creating 2 fake users...'
 file1 = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1598622297/n8xr08qf99exurskmo58chisatl7.jpg")
 user1 = User.create(first_name: "Laura", last_name: "Van Nieuwland", phone_number: "0686166366", email: "lauravannieuwland@gmail.com", password: "123456" )
@@ -53,4 +54,22 @@ filed = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1598518876/
 jamsession4  = JamSession.create(title: "Jamsession Four whatever", starts_at: "09/17/2020 8:00", ends_at: "09/17/2020 11:00",
 location: "Nieuwstraat 20 Breda", user: user1, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession4.image.attach(io:filed, filename:"jamsession4.png", content_type: 'image/png')
+
+puts 'Creating instrument list...'
+Instrument.create(instrument_type: "guitar")
+Instrument.create(instrument_type: "bass")
+Instrument.create(instrument_type: "drums")
+Instrument.create(instrument_type: "violin")
+Instrument.create(instrument_type: "piano")
+Instrument.create(instrument_type: "saxophone")
+Instrument.create(instrument_type: "flute")
+Instrument.create(instrument_type: "cello")
+Instrument.create(instrument_type: "clarinet")
+Instrument.create(instrument_type: "trumpet")
+Instrument.create(instrument_type: "microphone")
+Instrument.create(instrument_type: "harp")
+Instrument.create(instrument_type: "banjo")
+Instrument.create(instrument_type: "percussion instrument")
+
+
 
