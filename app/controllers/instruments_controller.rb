@@ -38,4 +38,5 @@ class InstrumentsController < ApplicationController
 
   def strong_params
     params.require(:instrument).permit(:instrument_type)
+  end
 end
