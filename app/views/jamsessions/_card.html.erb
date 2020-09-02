@@ -1,0 +1,25 @@
+
+<div class="card-jamsession">  
+  <% if jamsession.image.attached? %>
+    <%= cl_image_tag (jamsession.image.key), height: 200, crop: :fill, class: "jamsession-img" %>
+  <% else %>
+    <%= image_tag 'backgo_mfzx8q_2_jfia6a.jpg', height: 200, width: 300, class: "jamsession-img" %>
+  <% end %>
+  
+  <div class="content-card">
+    <h2><%= jamsession.title %></h2>
+    <p><%= jamsession.description %></p>
+    <p><strong>Starts at: </strong> <%= jamsession.starts_at %></p>
+    <p><strong>Location: </strong><%= jamsession.location %></p>
+    <p><strong>Capacity: </strong><%= jamsession.max_capacity %></p>
+    <p><strong>Status: </strong><%= jamsession.status %></p>
+    
+    <% if current_user.profile_image.attached? %>
+      <%= cl_image_tag current_user.profile_image.key, class: '.card-jamsession-user avatar-bordered' %>
+    <% else %>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: ".card-jamsession-user avatar-bordered" %>
+    <% end %>
+    <p><strong>Created by:</strong> <%= current_user.first_name %> <%= current_user.last_name %></p>
+  </div>
+</div>
+
