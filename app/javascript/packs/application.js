@@ -25,6 +25,8 @@ require("channels")
 // External imports
 import "bootstrap";
 
+//= require date_wrapper
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
