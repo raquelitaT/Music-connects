@@ -1,3 +1,4 @@
 class Post < ApplicationRecord
-  belongs_to :jamsession, :user
+  belongs_to :jamsession
+  belongs_to :user
 end
