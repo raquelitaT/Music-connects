@@ -1,2 +1,14 @@
+<div class="index-container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="card-jamsessions">
+        <div class="card-jamsession-infos">
+          <% @jamsessions.each do |jamsession| %>
+            <%= render "card", jamsession: jamsession %>
+          <% end %>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1>Hallo </h1>
