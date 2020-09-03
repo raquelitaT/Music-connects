@@ -1,6 +1,14 @@
 class JamsessionsController < ApplicationController
   def index
     @jamsessions = JamSession.all
+    @markers = @jamsessions.geocoded.map do |jamsession|
+      {
+        lat: jamsession.latitude,
+        lng: jamsession.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { jamsession: jamsession })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
+    end
   end
 
   def show

@@ -23,8 +23,11 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 # gem for cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
-
 gem 'cloudinary', '~> 1.16.0'
+
+# gem for map geolocation
+gem 'geocoder'
+
 
 
 # Use Active Storage variant
