@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :posts
   has_many :instruments, :through => :user_instruments
   has_one_attached :profile_image
-
+  has_many :jam_sessions
   accepts_nested_attributes_for :user_instruments
 end

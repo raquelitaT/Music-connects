@@ -11,16 +11,15 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @jamsession = JamSession.find(params[:jam_session_id])
+    @jamsession = JamSession.find(params[:jamsession_id])
     @request = Request.new(strong_params)
-    @request.user_id = current_user.id
-    @request.jamsession = @jamsession
-    if @request.save
-      redirect_to root_path
+    @request.user = current_user
+    @request.jam_session_id = @jamsession.id
+    if @request.save!
+      redirect_to jamsession_path(@jamsession, anchor: "request-#{@request.id}")
     else
-      render :new
+      render "jamsessions/show"
     end
-    @request.save
   end
 
   def destroy
@@ -29,22 +28,25 @@ class RequestsController < ApplicationController
     @request.destroy
   end
 
-   #   def accept
-    #     @jamsession = Jamsession.find(params[:id])
-    #     @jamsession.status = "Accept"
-    #     @jamsession.save
-    #     redirect_to users_path
-    #   end
+  def accept
+    @request = Request.find(params[:id])
+    @request.status = "Accepted"
+    @request.save
+    redirect_to jamsession_path(@jamsession)
+  end
 
-    #   def decline
-    #     @jamsession = Jamsession.find(params[:id])
-    #     @jamsession.status = "Declined"
-    #     @jamsession.save
-    #     redirect_to users_path
-    #   end
+  def decline
+    @request = Request.find(params[:id])
+    @request.status = "Declined"
+    @request.save
+    redirect_to jamsession_path(@jamsession)
+  end
+
+
 
   private
-    def strong_params
-      params.require(:requests).permit(:status)
-    end
+
+  def strong_params
+    params.require(:request).permit(:status)
+  end
 end
