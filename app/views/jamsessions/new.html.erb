@@ -11,7 +11,7 @@
               <%= f.input :location, label: "Location:" %>
               <%= f.input :starts_at, label: "Starts at:" , as: :datetime, html5: true %>
               <%= f.input :ends_at, label: "Ends at:" , as: :datetime, html5: true %>
-              <%= f.input :max_capacity, label: "Maximum capacity:" %>
+              <%= f.input :max_capacity, collection: 2..20, label: "Maximum capacity:" %>
               <%= f.input :image, as: :file, label: "Image:" %>
           <%= f.submit "Submit", class: "btn btn-outline-light" %>
        <% end %>

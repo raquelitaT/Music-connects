@@ -13,6 +13,8 @@ puts "Cleaning database"
 JamSession.destroy_all
 User.destroy_all
 Instrument.destroy_all
+
+
 puts 'Creating 2 fake users...'
 file1 = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1598622297/n8xr08qf99exurskmo58chisatl7.jpg")
 user1 = User.create(first_name: "Laura", last_name: "Van Nieuwland", phone_number: "0686166366", email: "lauravannieuwland@gmail.com", password: "123456" )
@@ -70,6 +72,8 @@ Instrument.create(instrument_type: "microphone")
 Instrument.create(instrument_type: "harp")
 Instrument.create(instrument_type: "banjo")
 Instrument.create(instrument_type: "percussion instrument")
+
+
 
 
 
