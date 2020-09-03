@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   match 'users' => 'users#show', via: :get
+
   resources :jamsessions do
     resources :requests, only: [:new, :create, :delete, :index] do
       member do
@@ -16,3 +17,4 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:index, :new, :create]
 end
+
