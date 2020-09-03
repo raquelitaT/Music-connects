@@ -1,0 +1,18 @@
+// container for showpage
+.show-main-container {
+  // background: linear-gradient(rgba(0,0,0,0.7), rgba(255,255,255,0.6)),url(backgo_mfzx8q_2_jfia6a.jpg);
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.show-main-container-2 {
+  // background: linear-gradient(rgba(0,0,0,0.7), rgba(255,255,255,0.6)),url(backgo_mfzx8q_2_jfia6a.jpg);
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}

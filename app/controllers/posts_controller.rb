@@ -1,25 +1,23 @@
 class PostsController < ApplicationController
-    def index
+  def index
     @jamsession = JamSession.find(params[:jamsession_id])
     @posts = Post.all
   end
 
   def new
     @jamsession = JamSession.find(params[:jamsession_id])
-    @post = Post.new
   end
 
   def create
-    @jamsession = JamSession.find(params[:jam_session_id])
+    @jamsession = JamSession.find(params[:jamsession_id])
     @post = Post.new(strong_params)
-    @post.user_id = current_user.id
-    @post.jamsession = @jamsession
-    if @post.save
-      redirect_to root_path
+    @post.user = current_user
+    @post.jam_session_id = @jamsession.id
+    if @post.save!
+      redirect_to jamsession_path(@jamsession, anchor: "post-#{@post.id}")
     else
-      render :new
+      render "jamsessions/show"
     end
-    @post.save
   end
 
   def destroy
@@ -44,6 +42,6 @@ class PostsController < ApplicationController
 
   private
     def strong_params
-      params.require(:posts).permit(:content)
+      params.require(:post).permit(:content)
     end
 end
