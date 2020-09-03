@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  match 'users' => 'users#show', via: :get
   resources :jamsessions do
     resources :requests, only: [:new, :create, :delete, :index] do
       member do
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
     end
     resources :posts, only: [:index, :create, :destroy, :new]
   end
-  resources :instruments
+  resources :instruments do
+    resources :userinstruments, only: [:index, :create, :edit, :update, :new]
+  end
   resources :reviews, only: [:index, :new, :create]
 end
