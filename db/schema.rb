@@ -88,14 +88,14 @@ ActiveRecord::Schema.define(version: 2020_09_02_135224) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_intruments", force: :cascade do |t|
+  create_table "user_instruments", force: :cascade do |t|
     t.integer "skill_level"
     t.bigint "user_id", null: false
     t.bigint "instrument_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["instrument_id"], name: "index_user_intruments_on_instrument_id"
-    t.index ["user_id"], name: "index_user_intruments_on_user_id"
+    t.index ["instrument_id"], name: "index_user_instruments_on_instrument_id"
+    t.index ["user_id"], name: "index_user_instruments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -120,6 +120,6 @@ ActiveRecord::Schema.define(version: 2020_09_02_135224) do
   add_foreign_key "posts", "users"
   add_foreign_key "requests", "jam_sessions"
   add_foreign_key "requests", "users"
-  add_foreign_key "user_intruments", "instruments"
-  add_foreign_key "user_intruments", "users"
+  add_foreign_key "user_instruments", "instruments"
+  add_foreign_key "user_instruments", "users"
 end

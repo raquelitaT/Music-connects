@@ -1,0 +1,13 @@
+.btn-outline-light {
+  border: none;
+  background-color: transparent;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+#dropdown-item-strong {
+  font-weight: bolder;
+  text-decoration: underline;
+}
