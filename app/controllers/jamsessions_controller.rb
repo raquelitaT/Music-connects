@@ -13,7 +13,7 @@ class JamsessionsController < ApplicationController
 
   def show
     @jamsession = JamSession.find(params[:id])
-
+    @post = Post.new
   end
 
   def new
