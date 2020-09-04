@@ -1,0 +1,20 @@
+<div class="bio-container">
+  <% if current_user.profile_image.attached? %>
+    <%= cl_image_tag current_user.profile_image.key,  height: 300, width: 400 %>
+  <% else %>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", alt: "avatar-large" %>
+  <% end %>
+  <div class="bio-text">
+    <ul class="list-unstyled">
+    <li>
+      <%= current_user.full_name %>
+    </li>
+    <li>
+      <%= current_user.email %>
+    </li>
+    <li>
+      <%= current_user.phone_number %>
+    </li>
+    </ul>
+  </div>
+</div>

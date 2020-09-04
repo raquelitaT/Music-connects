@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   has_many :jam_sessions
   accepts_nested_attributes_for :user_instruments
+
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end

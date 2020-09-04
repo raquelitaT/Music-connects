@@ -1,0 +1,21 @@
+.bio-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.bio-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.bio-container .bio-text {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
