@@ -88,7 +88,7 @@
 	}
 
 	// showpage
-	
+
 .row-show-page {
 	background-color: rgba(255, 255, 255, 0.4);
 }
@@ -3645,7 +3645,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("https://res.cloudinary.com/dexfami2g/image/upload/v1599163979/banner2_bmznul.jpg");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -3655,6 +3655,7 @@
 		position: relative;
 		text-align: center;
 		overflow: hidden;
+    // background-image: linear-gradient(-225deg, rgba(0,101,100,0.3) 0%, rgba(0,36,100,0.3) 50%), url(https://res.cloudinary.com/dd4yqqpfh/image/upload/v1598359504/david-menidrey-d26p8nEP9kU-unsplash_vmi8ly.jpg);
 	}
 
 		#banner .inner {

@@ -11,7 +11,7 @@
 
      <div class="card-example">
         <% if current_user.profile_image.attached? %>
-          <%= cl_image_tag current_user.profile_image.key,  height: 100, width:100, class: 'avatar-large' %>
+          <%= cl_image_tag current_user.profile_image.key,  height: 200, width:200, class: 'avatar-large' %>
         <% else %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
         <% end %>
