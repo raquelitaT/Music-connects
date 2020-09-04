@@ -98,7 +98,7 @@
   overflow: visible;
 }
 .card-show-jamsession img {
-  height: 100%;
+  margin-left: 4px;
   width: 240px;
   object-fit: cover;
 }
@@ -134,6 +134,7 @@
   transition: 0.3s;
   color: black;
   border-radius: 2px;
+  flex-grow: 0;
 }
 .card-other-show-info h4 b {
   /* Add shadows to create the "card" effect */
@@ -155,21 +156,26 @@
   margin-top: 30px;
   background-color: white;
   padding: 10px;
+  border-radius: 3px;
 }
 #posts {
-  background-color: rgba(10, 55, 94, 0.9);
+  // background-color: rgba(10, 55, 94, 0.9);
+  // background-color: #062038;
+  background-color: rgba(4, 22, 37, 0.95);
   padding: 30px;
   margin-right: 10px;
   border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   overflow: auto;
   height: 800px;
+  flex-grow: 2;
 }
+
 .sticky-chat-title {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-  background-color: rgba(10, 55, 94, 0.9) ;
+  background-color: transparent;
 }
 
 
