@@ -1,7 +1,9 @@
 <div class="index-container">
   <div class="cards">
     <% @jamsessions.each do |jamsession| %>
+    <%= link_to jamsession_path(jamsession) do %>
       <%= render "card", jamsession: jamsession %>
+      <% end %>
     <% end %>
   </div>
 
