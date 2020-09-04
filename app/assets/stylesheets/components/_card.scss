@@ -163,3 +163,60 @@
 }
 
 
+// profile page
+.profile-info-card {
+  background-color: rgba(237,237,237, 1.0) ;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  overflow: hidden;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+
+.jamsession-requests {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.my-requests {
+  display: flex;
+  background-color: rgba(237,237,237, 1.0) ;
+  flex-direction: column;
+}
+
+.my-requests h4 b {
+  color: black;
+}
+
+.my-jamsessions {
+  margin-right: 20px;
+  display: flex;
+  background-color: rgba(237,237,237, 1.0) ;
+  flex-direction: column;
+}
+
+.profile-info-card p {
+  color: black;
+  margin: 0 0 0,5em 0;
+}
+
+.profile-info-card h4 {
+  color: black;
+
+}
+.my-jamsessions h4 b {
+  color: black;
+}
+
+.my-jamsessions h5  {
+  color: black;
+}
+.profile-info-card strong {
+  color: black;
+  font-weight: bold;
+  margin: none;
+
+}
+
