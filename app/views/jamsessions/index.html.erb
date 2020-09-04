@@ -1,21 +1,14 @@
 <div class="index-container">
-  <div class="row">
-    <div class="col-6 offset-3">
+  <div class="cards">
+    <% @jamsessions.each do |jamsession| %>
+      <%= render "card", jamsession: jamsession %>
+    <% end %>
+  </div>
 
-    <div id="map"
-      style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-     </div>
 
-      <div class="card-jamsessions">
-        <div class="card-jamsession-infos">
-          <% @jamsessions.each do |jamsession| %>
-            <%= render "card", jamsession: jamsession %>
-          <% end %>
-        </div>  
-      </div>
-    </div>
+  <div id="map"
+  style="width: 30%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-

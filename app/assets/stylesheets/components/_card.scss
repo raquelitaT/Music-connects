@@ -1,9 +1,17 @@
+.cards {
+  flex-grow: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 8px;
+  border: white;
+}
+
 .card-jamsession {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 30px;
-  border-radius: 2px;
+  border-radius: 3px;
   position: relative;
   box-shadow: 0px 0px 0px 0px rgba(200,200,200,0.1);
   transition: box-shadow 200ms ease;
@@ -40,6 +48,7 @@
 
 .card-jamsession .content-card {
   position: relative;
+  height: 130px;
 }
 
 .card-jamsession ul li {
