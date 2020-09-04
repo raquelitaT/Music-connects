@@ -1,3 +1,4 @@
+
 .cards {
   flex-grow: 0;
   display: grid;
@@ -6,6 +7,7 @@
   padding: 8px;
   border: white;
 }
+
 
 .card-jamsession {
   overflow: hidden;
@@ -16,41 +18,34 @@
   box-shadow: 0px 0px 0px 0px rgba(200,200,200,0.1);
   transition: box-shadow 200ms ease;
 }
-
 .card-jamsession:hover {
   box-shadow: 0px 0px 15px 20px rgba(200,200,200,0.1);
 }
-
 .card-jamsession .badge {
   position: absolute;
   top: 10px;
   left: 10px;
 }
-
 .card-jamsession .content-card h4 {
   color: rgba(1,1,1,0.3);
     font-size: 12px;
     margin-bottom: 10px;
 }
-
 .jamsession-img {
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
-
 .card-jamsession h2 {
   font-size: 20px;
   font-weight: bold;
   margin: 0;
   color: black
 }
-
 .card-jamsession .content-card {
   position: relative;
   height: 130px;
 }
-
 .card-jamsession ul li {
   list-style-type: none;
   font-size: 20px;
@@ -58,7 +53,6 @@
   margin: 0;
   color: black
 }
-
 .card-jamsession strong {
   line-height: normal;
   font-size: 12px;
@@ -66,7 +60,6 @@
   margin: 0;
   color: black;
 }
-
 .card-jamsession .card-jamsession-infos {
   padding: 16px;
   /* display: flex; */
@@ -74,11 +67,9 @@
   /* align-items: flex-end; */
   /* position: relative; */
 }
-
 .content-card {
   padding: 10px;
 }
-
 .card-jamsession-infos .card-jamsession-user {
   position: absolute;
   right: 16px;
@@ -87,10 +78,7 @@
   height: 40px;
   object-fit: cover;
 }
-
-
 // card show pages
-
 .card-show-jamsession {
   overflow: unset;
   // height: 120px;
@@ -100,7 +88,6 @@
   align-items: center;
   border-radius: 2px;
 }
-
 .card-show-jamsession .card-jamsession-user {
   border: 2px white solid;
   width: 75px;
@@ -110,20 +97,17 @@
   right: -11px;
   overflow: visible;
 }
-
 .card-show-jamsession img {
   height: 100%;
   width: 240px;
   object-fit: cover;
 }
-
 .card-show-jamsession h4 {
   font-size: 35px;
   font-weight: bold;
   margin: 0;
   color: black;
 }
-
 .card-show-jamsession p {
   font-size: 12px;
   line-height: 1.4;
@@ -140,11 +124,9 @@
   margin-top: 8px;
   color: black;
 }
-
 .card-show-jamsession .card-show-jamsession-infos {
   padding: 16px;
 }
-
 .card-other-show-info {
   /* Add shadows to create the "card" effect */
   background-color: white;
@@ -153,22 +135,18 @@
   color: black;
   border-radius: 2px;
 }
-
 .card-other-show-info h4 b {
   /* Add shadows to create the "card" effect */
   color: black;
 }
-
 /* On mouse-over, add a deeper shadow */
 .card-other-show-info:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
 /* Add some padding inside the card container */
 .container-card-other-show-info {
   padding: 2px 16px;
 }
-
 .wrap-map-chat {
   display: flex;
   flex-direction: row-reverse;
@@ -187,10 +165,10 @@
   overflow: auto;
   height: 800px;
 }
-
 .sticky-chat-title {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
   background-color: rgba(10, 55, 94, 0.9) ;
 }
+
