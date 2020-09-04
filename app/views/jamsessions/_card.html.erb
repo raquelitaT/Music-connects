@@ -1,18 +1,18 @@
 
-   
+  <div class="card-jamsession">
+
     <% if jamsession.image.attached? %>
       <%= cl_image_tag (jamsession.image.key), height: 200, crop: :fill, class: "jamsession-img" %>
     <% else %>
       <%= image_tag 'backgo_mfzx8q_2_jfia6a.jpg', height: 200, width: 300, class: "jamsession-img" %>
     <% end %>
-    <div class="card-jamsession"> 
     <span class="badge badge-success"><%= jamsession.status %></span>
     <div class="content-card">
       <h4>
       <%= jamsession.location %> | <%= jamsession.starts_at ? jamsession.starts_at.strftime("%A, %b %d") : '' %>
       </h4>
       <h2><%= jamsession.title %></h2>
-      <p><%= jamsession.description %></p>
+      <p><%= jamsession.description.slice(0, 150) + "..." %></p>
         <% if current_user.profile_image.attached? %>
           <%= cl_image_tag current_user.profile_image.key, class: 'card-jamsession-user avatar-bordered' %>
         <% else %>
