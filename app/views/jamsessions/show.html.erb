@@ -1,67 +1,72 @@
-<div class="show-main-container">     
-  <div class="card-show-jamsession">
-    <% if @jamsession.image.attached? %>
-      <%= cl_image_tag (@jamsession.image.key), height: 200, class: "jamsession-img" %>
-    <% else %>
-      <%= image_tag 'backgo_mfzx8q_2_jfia6a.jpg', height: 200, width: 300, class: "jamsession-img" %>
-    <% end %>
-    <div class="card-show-jamsession-infos">
-      <h2><%= @jamsession.title %></h2>
-      <p><strong><%= @jamsession.description %></strong></p>
-    </div>        
-  </div>
+ <div class="profile-container">
+   <div class="row">
+     <div class="col-6 offset-3">
+<br>
+<br>
+<br>
+<br>
 
-  <div class="show-main-container-2">
-
-    <div class="card-other-show-info">
-      <div id="map"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="card-show-jamsession">
+        <% if @jamsession.image.attached? %>
+          <%= cl_image_tag (@jamsession.image.key), height: 200, class: "jamsession-img" %>
+        <% else %>
+          <%= image_tag 'backgo_mfzx8q_2_jfia6a.jpg', height: 200, width: 300, class: "jamsession-img" %>
+        <% end %>
+        <div class="card-show-jamsession-infos">        
+          <h4><%= @jamsession.title %></h4>          
+            <p><strong><%= @jamsession.description %></strong></p>
+            <p><strong>Hosted by:</strong> <%= @jamsession.user.first_name  %><%= @jamsession.user.last_name %></p>
+            <p><strong>Date:</strong><%= @jamsession.starts_at %> </p>
+            <p><strong>Status:</strong> <%= @jamsession.status %></p>
+            <p><strong>Location:</strong> <%= @jamsession.location %></p>
+        </div>   
+        <% if current_user.profile_image.attached? %>
+          <%= cl_image_tag @jamsession.user.profile_image.key, class: 'card-jamsession-user avatar-bordered' %>
+        <% else %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-jamsession-user avatar-bordered" %>
+        <% end %>           
       </div>
-        
-      <div class="container-card-other-show-info">
-        <h4><b><%= @jamsession.user %></b></h4>
-        <p><b><%= @jamsession.location %></b></p>
-        <p><b><%= @jamsession.status %></b></p>
-        <p><b><%= @jamsession.starts_at %></b></p>
-        <p><b><%= @jamsession.starts_at %></b></p>
-      </div>
-    </div>
 
+      <div class="wrap-map-chat">
 
-
-    <div id="posts" data-jamsession-id="<%= @jamsession.id %>">
-      <% @jamsession.posts.each do |post| %>
-        <div class="post-container" id="post-<%= post.id %>">
-          <i class="author">
-            <span><%= post.user.first_name %></span>
-            <small><%= post.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-          </i>
-          <p><%= post.content %></p>
+        <div class="card-other-show-info">
+          <div id="map"
+            style="width: 100%; height: 600px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+            
+          <div class="container-card-other-show-info">
+            <h4><b><%= @jamsession.user %></b></h4>
+            <p><b><%= @jamsession.location %></b></p>
+            <p><b><%= @jamsession.status %></b></p>
+            <p><b><%= @jamsession.starts_at %></b></p>
+            <p><b><%= @jamsession.starts_at %></b></p>
+          </div>
         </div>
-      <% end %>
-      <%= simple_form_for [ @jamsession, @post ], url: jamsession_posts_path(@jamsession), remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Post ##{@jamsession.title}" %>
-      <% end %>
-    </div>  
-  </div>  
+
+
+
+      <div id="posts" data-jamsession-id="<%= @jamsession.id %>">
+
+        <div class="sticky-chat-title">        
+        <h2>POSTS</h2>
+        </div>
+
+        <% @jamsession.posts.each do |post| %>
+          <div class="post-container" id="post-<%= post.id %>">
+            <i class="author">
+              <span><%= post.user.first_name %></span>
+              <small><%= post.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+            </i>
+            <p><%= post.content %></p>
+            ---------------------------------------------------------
+          </div>
+        <% end %>
+        <%= simple_form_for [ @jamsession, @post ], url: jamsession_posts_path(@jamsession), remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Post ##{@jamsession.title}" %>
+        <% end %>
+      </div>
+    </div>    
+  </div>
 </div>
-
-
-
-
-  
-
-
-
-
-@jamsession.starts_at
-@jamsession.location
-@jamsession.max_capacity
-@jamsession.status
-@jamsession.description
-@jamsession.title
-
-
-
