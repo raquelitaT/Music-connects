@@ -1,31 +1,38 @@
-<div class="profile-container">
-  <div class="row">
-    <div class="col-6 offset-3">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../app/assets/images/banner.jpg)">
-  Profile
-</div>
-
-      <div class="container">
-        <h4><b><%= current_user.first_name %> <%= current_user.last_name %></b></h4>
+<div class="profile-page-container">
+  <div class="row-profile-page">
+    <div class="col-8 offset-2">
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="profile-avatar">
+      <% if current_user.profile_image.attached? %>
+            <%= cl_image_tag current_user.profile_image.key,  height: 300, width: 400, class: 'avatar-large' %>
+          <% else %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+          <% end %>
       </div>
 
-     <div class="card-example">
-        <% if current_user.profile_image.attached? %>
-          <%= cl_image_tag current_user.profile_image.key,  height: 200, width:200, class: 'avatar-large' %>
-        <% else %>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
-        <% end %>
-
-        <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
-        <p>Phone: <%= current_user.phone_number %></p>
-        <p>Email: <%= current_user.email %></p>
-        <p>Instruments played: <%= current_user.user_instruments %></p>
-
-
-        <br>
+      <div class="profile-info-card">
+        <h5><strong>Name:</strong> <%= current_user.first_name %> <%= current_user.last_name %></h5>
+        <h5><strong>Phone:</strong> <%= current_user.phone_number %></h5>
+        <h5><strong>Email:</strong> <%= current_user.email %></h5>     
       </div>
 
-      <div class="card-example">
+      <div class="jamsession-requests">
+        <div class="my-jamsessions">
+        <h4><b>Jam Sessions</b></h4>
+           <% current_user.jam_sessions.each do |jamsession| %>
+           <div class="card-example">
+              <h5><%= jamsession.title %></h5>
+            </div>
+            <% end %>
+
+        </div>
+
+      
+
+        <div class="my-requests">
 
         <h4><b>Requests for your jam sessions</b></h4>
            <% @host_user_requests.each do |request| %>
@@ -44,11 +51,11 @@
 
             </div>
             <% end %>
-
+        </div>
+      
+      
       </div>
 
-
-    </div>
+    </div>    
   </div>
 </div>
-
