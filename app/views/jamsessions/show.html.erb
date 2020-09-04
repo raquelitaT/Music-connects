@@ -12,19 +12,19 @@
         <% else %>
           <%= image_tag 'backgo_mfzx8q_2_jfia6a.jpg', height: 200, width: 300, class: "jamsession-img" %>
         <% end %>
-        <div class="card-show-jamsession-infos">        
-          <h4><%= @jamsession.title %></h4>          
+        <div class="card-show-jamsession-infos">
+          <h4><%= @jamsession.title %></h4>
             <p><strong><%= @jamsession.description %></strong></p>
             <p><strong>Hosted by:</strong> <%= @jamsession.user.first_name  %><%= @jamsession.user.last_name %></p>
             <p><strong>Date:</strong><%= @jamsession.starts_at %> </p>
             <p><strong>Status:</strong> <%= @jamsession.status %></p>
             <p><strong>Location:</strong> <%= @jamsession.location %></p>
-        </div>   
+        </div>
         <% if current_user.profile_image.attached? %>
           <%= cl_image_tag @jamsession.user.profile_image.key, class: 'card-jamsession-user avatar-bordered' %>
         <% else %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-jamsession-user avatar-bordered" %>
-        <% end %>           
+        <% end %>
       </div>
 
       <div class="wrap-map-chat">
@@ -35,7 +35,7 @@
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-            
+
           <div class="container-card-other-show-info">
             <h4><b><%= @jamsession.user %></b></h4>
             <p><b><%= @jamsession.location %></b></p>
@@ -49,8 +49,8 @@
 
       <div id="posts" data-jamsession-id="<%= @jamsession.id %>">
 
-        <div class="sticky-chat-title">        
-        <h2>POSTS</h2>
+        <div class="sticky-chat-title">
+        <h3>Wanna post a comment on this event?</h3>
         </div>
 
         <% @jamsession.posts.each do |post| %>
@@ -67,6 +67,6 @@
           <%= f.input :content, label: false, placeholder: "Post ##{@jamsession.title}" %>
         <% end %>
       </div>
-    </div>    
+    </div>
   </div>
 </div>
