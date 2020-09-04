@@ -1,23 +1,16 @@
 <div class="index-container">
-  <div class="row">
-    <div class="col-6 offset-3">
+  <div class="cards">
+    <% @jamsessions.each do |jamsession| %>
+    <%= link_to jamsession_path(jamsession) do %>
+      <%= render "card", jamsession: jamsession %>
+      <% end %>
+    <% end %>
+  </div>
 
-    <div id="map"
-      style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-     </div>
+  <div id="map"
+  style="width: 30%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
-      <div class="card-jamsessions">
-        <div class="card-jamsession-infos">
-          <% @jamsessions.each do |jamsession| %>
-            <%= link_to jamsession_path(jamsession) do %>
-
-            <%= render "card", jamsession: jamsession %>
-            <% end %>
-          <% end %>
-        </div>  
-      </div>
-    </div>
   </div>
 </div>

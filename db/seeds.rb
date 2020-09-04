@@ -54,7 +54,7 @@ jamsession3.image.attach(io:filez, filename:"jamsession3.png", content_type: 'im
 
 filed = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1598518876/banjo_lljlgl.jpg")
 jamsession4  = JamSession.create(title: "Jamsession Four whatever", starts_at: "09/17/2020 8:00", ends_at: "09/17/2020 11:00",
-location: "Nieuwstraat 20 Breda", user: user1, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
+location: "Nieuwstraat 20 Breda", user: user2, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession4.image.attach(io:filed, filename:"jamsession4.png", content_type: 'image/png')
 
 puts 'Creating instrument list...'

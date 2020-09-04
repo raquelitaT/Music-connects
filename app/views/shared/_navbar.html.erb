@@ -2,6 +2,7 @@
       <header id="header">
         <h1><a href="#"><i class="fa fa-headphones"></i>  Music Connects <span></span></a></h1>
         <div class="dropdown show">
+        <button><%= link_to "Create a jam session  ", new_jamsession_path %></button>
         <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9776; Menu</a>
        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <%= link_to "Account", users_path, class: "dropdown-item" %>
