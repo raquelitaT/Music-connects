@@ -4,5 +4,4 @@ class UsersController < ApplicationController
     # @request = Request.find(params[:id])
     # @user = User.find(@request.user_id)    
   end
-
 end
