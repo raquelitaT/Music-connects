@@ -1,6 +1,6 @@
 class JamSession < ApplicationRecord
-  has_many :requests
-  has_many :posts
+  has_many :requests, dependent: :destroy
+  has_many :posts, dependent: :destroy
   belongs_to :user
   has_one_attached :image
   geocoded_by :location
