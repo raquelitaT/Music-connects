@@ -1,6 +1,10 @@
 class JamsessionsController < ApplicationController
   def index
-    @jamsessions = JamSession.all
+    if params[:query].present?
+      @jamsessions = JamSession.where("location ILIKE ?", "%#{params[:query]}%")
+    else
+      @jamsessions = JamSession.all
+    end
     @markers = @jamsessions.geocoded.map do |jamsession|
       {
         lat: jamsession.latitude,
@@ -50,6 +54,6 @@ class JamsessionsController < ApplicationController
   private
 
   def strong_params
-    params.require(:jamsession).permit(:title, :starts_at, :ends_at, :location, :status, :image, :latitude, :longitude, :description, :max_capacity, :host_id)
+    params.require(:jam_session).permit(:title, :starts_at, :ends_at, :location, :status, :image, :latitude, :longitude, :description, :max_capacity, :host_id)
   end
 end
