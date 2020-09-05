@@ -26,15 +26,13 @@
 							<h1>This is Music Connects</h1>
 							<p>Connecting people through music. Come jam with us!</p>
 						</header>
-
-          <%= form_tag jamsessions_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a jam session near you"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+            <%= form_tag jamsessions_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a jam session near you" %>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+            <% end %>
 					</div>
 
 				</section>
