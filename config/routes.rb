@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: [:show]
   root to: 'pages#home'
   match 'users' => 'users#show', via: :get
 
@@ -16,5 +17,6 @@ Rails.application.routes.draw do
     resources :userinstruments, only: [:index, :create, :edit, :update, :new]
   end
   resources :reviews, only: [:index, :new, :create]
+  
 end
 
