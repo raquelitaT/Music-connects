@@ -4,28 +4,30 @@
   <% else %>
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", alt: "avatar-large" %>
   <% end %>
-  <div class="bio-text">
-    <ul class="list-unstyled">
-    <li>
-      <%= current_user.full_name %>     
-    </li>
-    <li>
-      <%= current_user.email %>
-    </li>
-    <li>
-      <%= current_user.phone_number %>
-    </li>
-    </ul>
-  </div>
-  <div class="bio-instruments">
-  <h4><b>Instruments I play</b></h4>
-    <ul class="list-unstyled">
-    <li>
-      <% current_user.user_instruments.each do |instrument| %>
-      <h1>Instrument&nbsp;&nbsp;&nbsp;&nbsp;   Level</h1>
-        <p>:: <%= Instrument.find(instrument.instrument_id).instrument_type %>  &nbsp; &nbsp; <%= instrument.skill_level %></p>        
-        <% end %>
-    </ul>
+  <div class="bio-text-and-instrument">
+    <div class="bio-text">
+      <ul class="list-unstyled">
+      <li>
+        <%= current_user.full_name %>     
+      </li>
+      <li>
+        <%= current_user.email %>
+      </li>
+      <li>
+        <%= current_user.phone_number %>
+      </li>
+      </ul>
+    </div>
+    <div class="bio-instruments">
+    <h4><b>Instruments I play</b></h4>
+      <ul class="list-unstyled">
+      <li>
+        <% current_user.user_instruments.each do |instrument| %>
+        <h1>Instrument&nbsp;&nbsp;&nbsp;&nbsp;   Level</h1>
+          <p>:: <%= Instrument.find(instrument.instrument_id).instrument_type %> <span class="stars">2.6545344</span>  &nbsp; &nbsp; <%= instrument.skill_level %></p>        
+          <% end %>
+      </ul>
+    </div>
   </div>
 
 

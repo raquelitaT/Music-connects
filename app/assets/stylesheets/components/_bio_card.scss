@@ -12,10 +12,18 @@
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
+  border: white 2px solid;
 }
 
 .bio-container .bio-text {
   width: 100%;
   max-width: 600px;
-  text-align: center;
+  // text-align: center;
+}
+
+.bio-container .bio-instruments {
+  width: 100%;
+  max-width: 600px;
+  margin-left: 20px;
+  // text-align: center;
 }
