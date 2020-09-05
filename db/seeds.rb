@@ -13,6 +13,8 @@ puts "Cleaning database"
 JamSession.destroy_all
 User.destroy_all
 Instrument.destroy_all
+UserInstrument.destroy_all
+Request.destroy_all
 
 
 puts 'Creating 2 fake users...'
@@ -72,6 +74,28 @@ Instrument.create(instrument_type: "microphone")
 Instrument.create(instrument_type: "harp")
 Instrument.create(instrument_type: "banjo")
 Instrument.create(instrument_type: "percussion instrument")
+
+puts "Creating 4 UserInstruments per user"
+UserInstrument.create(skill_level: 5, user: user1, instrument_id: 1)
+UserInstrument.create(skill_level: 4, user: user1, instrument_id: 2)
+UserInstrument.create(skill_level: 3, user: user1, instrument_id: 3)
+UserInstrument.create(skill_level: 2, user: user1, instrument_id: 4)
+UserInstrument.create(skill_level: 5, user: user2, instrument_id: 1)
+UserInstrument.create(skill_level: 4, user: user2, instrument_id: 2)
+UserInstrument.create(skill_level: 3, user: user2, instrument_id: 3)
+UserInstrument.create(skill_level: 2, user: user2, instrument_id: 4)
+
+puts "Creating 2 requests per jamsession"
+
+Request.create(status: "pending", jam_session: jamsession1, user: user1)
+Request.create(status: "pending", jam_session: jamsession1, user: user2)
+Request.create(status: "pending", jam_session: jamsession2, user: user1)
+Request.create(status: "pending", jam_session: jamsession2, user: user2)
+Request.create(status: "pending", jam_session: jamsession3, user: user1)
+Request.create(status: "pending", jam_session: jamsession3, user: user2)
+Request.create(status: "pending", jam_session: jamsession4, user: user1)
+Request.create(status: "pending", jam_session: jamsession4, user: user2)
+
 
 
 
