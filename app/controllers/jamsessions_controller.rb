@@ -28,7 +28,7 @@ class JamsessionsController < ApplicationController
     @jamsession = JamSession.new(strong_params)
     @jamsession.user_id = current_user.id
     if @jamsession.save
-      redirect_to users_path
+      redirect_to account_path
     else
       render :new
     end
@@ -54,6 +54,6 @@ class JamsessionsController < ApplicationController
   private
 
   def strong_params
-    params.require(:jam_session).permit(:title, :starts_at, :ends_at, :location, :status, :image, :latitude, :longitude, :description, :max_capacity, :host_id)
+    params.require(:jam_session).permit(:title, :starts_at, :ends_at, :location, :status, :image, :latitude, :longitude, :description, :max_capacity, :host_id, jam_session_instruments_attributes: [:instrument_id])
   end
 end

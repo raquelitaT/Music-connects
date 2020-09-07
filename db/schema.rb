@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_135224) do
+ActiveRecord::Schema.define(version: 2020_09_07_101404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 2020_09_02_135224) do
     t.string "instrument_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "jam_session_instruments", force: :cascade do |t|
+    t.bigint "jam_session_id", null: false
+    t.bigint "instrument_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["instrument_id"], name: "index_jam_session_instruments_on_instrument_id"
+    t.index ["jam_session_id"], name: "index_jam_session_instruments_on_jam_session_id"
   end
 
   create_table "jam_sessions", force: :cascade do |t|
@@ -115,6 +124,8 @@ ActiveRecord::Schema.define(version: 2020_09_02_135224) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "jam_session_instruments", "instruments"
+  add_foreign_key "jam_session_instruments", "jam_sessions"
   add_foreign_key "jam_sessions", "users"
   add_foreign_key "posts", "jam_sessions"
   add_foreign_key "posts", "users"

@@ -12,11 +12,19 @@
               <%= f.input :starts_at, label: "Starts at:" , as: :datetime, html5: true %>
               <%= f.input :ends_at, label: "Ends at:" , as: :datetime, html5: true %>
               <%= f.input :max_capacity, collection: 2..20, label: "Maximum capacity:" %>
+
+              <div id="instrument-target">
+                <%= render "simple_fields_for_instrument", jamsession: @jamsession %>
+              </div>
+              <%= link_to "Add a new instrument", new_jam_session_instrument_path, remote: true %>
+
+
               <%= f.input :image, as: :file, label: "Image:" %>
           <%= f.submit "Submit", class: "btn btn-outline-light" %>
        <% end %>
     </div>
   </div>
 </div>
+
 
 

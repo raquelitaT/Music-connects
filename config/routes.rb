@@ -14,9 +14,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :create, :destroy, :new]
   end
   resources :instruments do
-    resources :userinstruments, only: [:index, :create, :edit, :update, :new]
+    # resources :userinstruments, only: [:index, :create, :edit, :update, :new]
   end
-  resources :reviews, only: [:index, :new, :create]
-  
+  resources :jam_session_instruments, only: [:new]
 end
 

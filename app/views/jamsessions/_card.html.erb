@@ -4,7 +4,7 @@
     <% if jamsession.image.attached? %>
       <%= cl_image_tag (jamsession.image.key), height: 200, crop: :fill, class: "jamsession-img" %>
     <% else %>
-      <%= image_tag 'backgo_mfzx8q_2_jfia6a.jpg', height: 200, width: 300, class: "jamsession-img" %>
+      <%= image_tag 'banner.jpg', height: 200, width: 300, class: "jamsession-img" %>
     <% end %>
     <span class="badge badge-success"><%= jamsession.status %></span>
     <div class="content-card">
