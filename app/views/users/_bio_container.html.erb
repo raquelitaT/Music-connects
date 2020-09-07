@@ -24,8 +24,13 @@
       <li>
         <% @user.user_instruments.each do |instrument| %>
         <h1>Instrument&nbsp;&nbsp;&nbsp;&nbsp;   Level</h1>
-          <p>:: <%= Instrument.find(instrument.instrument_id).instrument_type %> <span class="stars">2.6545344</span>  &nbsp; &nbsp; <%= instrument.skill_level %></p>        
+          <p>:: <%= Instrument.find(instrument.instrument_id).instrument_type %>  &nbsp; &nbsp; <%= instrument.skill_level %></p>        
+          <%= 5.times do |num| %>
+          <i class="fa <%= instrument.skill_level < num ? "r" : "s" %> fa-star"></i> 
           <% end %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <%= link_to  "Add an instrument", edit_user_registration_path %>
       </ul>
     </div>
   </div>

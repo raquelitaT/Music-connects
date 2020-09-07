@@ -82,8 +82,10 @@
 .card-show-jamsession {
   overflow: unset;
   // height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: rgba(237, 237, 237, 1) ;
+  -webkit-box-shadow: 2px 3px 22px 0px rgba(153,150,153,1);
+  -moz-box-shadow: 2px 3px 22px 0px rgba(153,150,153,1);
+  box-shadow: 2px 3px 22px 0px rgba(153,150,153,1);
   display: flex;
   align-items: center;
   border-radius: 2px;
@@ -98,8 +100,8 @@
   overflow: visible;
 }
 .card-show-jamsession img {
-  margin-left: 4px;
   width: 240px;
+  height: 100%;
   object-fit: cover;
 }
 .card-show-jamsession h4 {
@@ -154,7 +156,7 @@
   /* flex-grow: 1; */
   justify-content: space-between;
   margin-top: 30px;
-  background-color: white;
+  // background-color: white;
   padding: 10px;
   border-radius: 3px;
 }
