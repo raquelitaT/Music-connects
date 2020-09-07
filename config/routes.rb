@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   root to: 'pages#home'
-  match 'users' => 'users#show', via: :get
+  match '/account' => 'users#account', via: :get
 
   resources :jamsessions do
     resources :requests, only: [:new, :create, :delete, :index] do
