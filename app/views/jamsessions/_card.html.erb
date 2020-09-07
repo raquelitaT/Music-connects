@@ -13,12 +13,12 @@
       </h4>
       <h2><%= jamsession.title %></h2>
       <p><%= jamsession.description.slice(0, 150) + "..." %></p>
-        <% if current_user.profile_image.attached? %>
-          <%= cl_image_tag current_user.profile_image.key, class: 'card-jamsession-user avatar-bordered' %>
+         <% if current_user.profile_image.attached? %>
+          <%= cl_image_tag jamsession.user.profile_image.key, class: 'card-jamsession-user avatar-bordered' %>
         <% else %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-jamsession-user avatar-bordered" %>
         <% end %>
-    </div>
+     </div>
   </div>
 
 

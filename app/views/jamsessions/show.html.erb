@@ -18,7 +18,14 @@
             <p><strong>Hosted by:</strong> <%= @jamsession.user.first_name  %><%= @jamsession.user.last_name %></p>
             <p><strong>Date:</strong><%= @jamsession.starts_at %> </p>
             <p><strong>Status:</strong> <%= @jamsession.status %></p>
-            <p><strong>Location:</strong> <%= @jamsession.location %></p>
+            <p><strong>Location:</strong> <%= @jamsession.location %></p>  
+        </div>
+        
+          <div class="div-button-request">
+            <%= simple_form_for [ @jamsession, @request ], url: jamsession_requests_path(@jamsession)  do |f| %>
+            <%= f.hidden_field :status, value: "pending" %>
+            <%= f.submit "Join this event", class: "btn btn-dark" %>
+          <% end %>        
         </div>
         <% if current_user.profile_image.attached? %>
           <%= cl_image_tag @jamsession.user.profile_image.key, class: 'card-jamsession-user avatar-bordered' %>
@@ -43,6 +50,11 @@
             <p><b><%= @jamsession.starts_at %></b></p>
             <p><b><%= @jamsession.starts_at %></b></p>
           </div>
+
+
+
+
+
         </div>
 
 
