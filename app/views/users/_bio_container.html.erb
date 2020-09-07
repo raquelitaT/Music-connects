@@ -7,6 +7,8 @@
   <div class="bio-text-and-instrument">
     <div class="bio-text">
       <ul class="list-unstyled">
+      <h4><b>My info </b></h4>  
+      <i class="fas fa-info"></i> 
       <li>
         <%= @user.full_name %>     
       </li>
@@ -23,14 +25,18 @@
       <ul class="list-unstyled">
       <li>
         <% @user.user_instruments.each do |instrument| %>
-        <h1>Instrument&nbsp;&nbsp;&nbsp;&nbsp;   Level</h1>
-          <p>:: <%= Instrument.find(instrument.instrument_id).instrument_type %>  &nbsp; &nbsp; <%= instrument.skill_level %></p>        
-          <%= 5.times do |num| %>
-          <i class="fa <%= instrument.skill_level < num ? "r" : "s" %> fa-star"></i> 
-          <% end %>
+
+          <p>:: <%= Instrument.find(instrument.instrument_id).instrument_type %></p>
+          <% instrument.skill_level.times do |num| %>
           <i class="fas fa-star"></i>
           <% end %>
-          <%= link_to  "Add an instrument", edit_user_registration_path %>
+          <% (5 - instrument.skill_level).times do |num| %>
+          <i class="far fa-star"></i>
+          <% end %>     
+          <% end %>
+          <br>
+          <br>
+          <h6><%= link_to  "Add an instrument", edit_user_registration_path %></h6>
       </ul>
     </div>
   </div>

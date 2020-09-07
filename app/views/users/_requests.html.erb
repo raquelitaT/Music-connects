@@ -3,9 +3,7 @@
     <br>
     <h5><%= request.jam_session.title %></h5>
     <p>Status <%= request.status %></p>
-
-      <%= link_to  request.user.full_name, user_path(request.user) %>
-    <h6><%= request.user.full_name %><span STYLE="font-style: italic">wants to join your event</span></h6>
+    <h6><%= link_to  request.user.full_name, user_path(request.user) %><span STYLE="font-style: italic"> wants to join your event</span></h6>
     <div class="button-position-profile">
       <div class="one-button-position-profile">
         <%= button_to "Decline", decline_jamsession_request_path(request.jam_session, request), :class => '.button-position-profile-1',  method: :put%> 
