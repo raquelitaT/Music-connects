@@ -1,0 +1,3 @@
+<%= simple_fields_for "jam_session[jam_session_instruments_attributes][]", jamsession.jam_session_instruments.build do |ff| %>
+<%= ff.association :instrument, label_method: :instrument_type, label: "Which instrument(s) do you need on your jam session?" %>
+<% end %>
