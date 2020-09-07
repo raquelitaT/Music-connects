@@ -8,7 +8,9 @@
     <div class="col-6">
       <div class="cards">
         <% current_user.jam_sessions.each do |jamsession| %>
+        <%= link_to jamsession_path(jamsession) do %>
           <%= render "jamsessions/card", jamsession: jamsession %>
+        <% end %>
         <% end %>
       </div>
     </div>
