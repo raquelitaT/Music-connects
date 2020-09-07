@@ -1,0 +1,13 @@
+   <%= simple_fields_for "user[user_instruments_attributes][]", resource.user_instruments.build do |ff| %>
+    <div class="row">
+    <div class="col">
+      <%= ff.association :instrument, label_method: :instrument_type, label: "Which instrument do you play?" %>
+       </div>
+    <div class="col">
+      <%= ff.input :skill_level, collection: 1..5, label: "What's your level (from 1 to 5)?" %>
+       </div>
+       </div>
+      <% end %>
+
+
+

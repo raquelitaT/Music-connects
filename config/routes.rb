@@ -12,10 +12,12 @@ Rails.application.routes.draw do
       end
     end
     resources :posts, only: [:index, :create, :destroy, :new]
+
   end
   resources :instruments do
     # resources :userinstruments, only: [:index, :create, :edit, :update, :new]
   end
   resources :jam_session_instruments, only: [:new]
+  resources :user_instruments, only: [:new]
 end
 
