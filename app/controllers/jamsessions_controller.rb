@@ -27,6 +27,7 @@ class JamsessionsController < ApplicationController
 
   def create
     @jamsession = JamSession.new(strong_params)
+
     @jamsession.user_id = current_user.id
     if @jamsession.save
       redirect_to account_path
