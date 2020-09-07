@@ -4,7 +4,7 @@
       <br>
         <br>
           <h3>Create your jam session:</h3>
-            <br>
+
               <%= simple_form_for @jamsession, url: jamsessions_path do |f| %>
               <%= f.input :title, label: "Title:" %>
               <%= f.input :description, label: "Description:" %>
@@ -17,6 +17,8 @@
                 <%= render "simple_fields_for_instrument", jamsession: @jamsession %>
               </div>
               <%= link_to "Add a new instrument", new_jam_session_instrument_path, remote: true %>
+              <br>
+              <br>
 
 
               <%= f.input :image, as: :file, label: "Image:" %>

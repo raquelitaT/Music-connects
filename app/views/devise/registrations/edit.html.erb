@@ -17,20 +17,17 @@
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { autocomplete: "current-password" } %>
 
     <%= f.input :phone_number, label: "Phone number:" %>
-    <%= f.input :profile_image, as: :file, label: "Profile picture:" %>
-     <div class="div">
-      <div class="row">
-        <div class="col-6">
 
-      <%= simple_fields_for "user[user_instruments_attributes][]", resource.user_instruments.build do |ff| %>
-      <%= ff.association :instrument, label_method: :instrument_type, label: "Which instrument(s) do you play?" %>
-      <%= ff.input :skill_level, label: "What's your level (from 1 to 5)?" %>
-      <% end %>
 
-      </div>
 
-      </div>
-      </div>
+                <div id="user-target">
+                <%= render "simple_fields_for_user" %>
+              </div>
+              <%= link_to "Add more here if you play other instrument",  new_user_instrument_path, remote: true %>
+              <br>
+              <br>
+<%= f.input :profile_image, as: :file, label: "Profile picture:" %>
+
   </div>
 
   <div class="form-actions">
