@@ -12,5 +12,14 @@
         <% end %>
       </div>
     </div>
+    <div class="col-6">
+      <div class="card-requests">
+      <h4><b>Requests for your jam sessions</b></h4>
+        <% @host_user_requests.each do |request| %>
+        <%= render "users/requests", request: request %>
+        
+        <% end %>
       </div>
+    </div>
+  </div>
 </div>

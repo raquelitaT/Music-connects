@@ -32,7 +32,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = "Accepted"
     @request.save
-    redirect_to jamsession_path(@jamsession)
+    redirect_to users_path
   end
 
   def decline
