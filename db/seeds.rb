@@ -15,6 +15,8 @@ User.destroy_all
 Instrument.destroy_all
 UserInstrument.destroy_all
 Request.destroy_all
+Post.destroy_all
+JamSessionInstrument.destroy_all
 
 
 puts 'Creating 2 fake users...'
@@ -76,16 +78,31 @@ location: "Nieuwstraat 20 Breda", user: user2, max_capacity: 18, status: "not fu
 jamsession4.image.attach(io:filed, filename:"jamsession4.png", content_type: 'image/png')
 
 
-
 puts "Creating 4 UserInstruments per user"
-UserInstrument.create!(skill_level: "5", user: user1, instrument: instrument1)
-UserInstrument.create!(skill_level: "4", user: user1, instrument: instrument2)
-UserInstrument.create!(skill_level: "3", user: user1, instrument: instrument3)
-UserInstrument.create!(skill_level: "2", user: user1, instrument: instrument4)
-UserInstrument.create!(skill_level: "5", user: user2, instrument: instrument5)
-UserInstrument.create!(skill_level: "4", user: user2, instrument: instrument6)
-UserInstrument.create!(skill_level: "3", user: user2, instrument: instrument7)
-UserInstrument.create!(skill_level: "2", user: user2, instrument: instrument8)
+UserInstrument.create(skill_level: "5", user: user1, instrument: instrument1)
+UserInstrument.create(skill_level: "4", user: user1, instrument: instrument2)
+UserInstrument.create(skill_level: "3", user: user1, instrument: instrument3)
+UserInstrument.create(skill_level: "2", user: user1, instrument: instrument4)
+UserInstrument.create(skill_level: "5", user: user2, instrument: instrument5)
+UserInstrument.create(skill_level: "4", user: user2, instrument: instrument6)
+UserInstrument.create(skill_level: "3", user: user2, instrument: instrument7)
+UserInstrument.create(skill_level: "2", user: user2, instrument: instrument8)
+
+puts "Creating 2 JamSessionInstruments per Jam Session"
+JamSessionInstrument.create(instrument: instrument1, jam_session: jamsession1)
+JamSessionInstrument.create(instrument: instrument2, jam_session: jamsession2)
+JamSessionInstrument.create(instrument: instrument3, jam_session: jamsession3)
+JamSessionInstrument.create(instrument: instrument4, jam_session: jamsession4)
+JamSessionInstrument.create(instrument: instrument5, jam_session: jamsession1)
+JamSessionInstrument.create(instrument: instrument6, jam_session: jamsession2)
+JamSessionInstrument.create(instrument: instrument7, jam_session: jamsession3)
+JamSessionInstrument.create(instrument: instrument8, jam_session: jamsession4)
+JamSessionInstrument.create(instrument: instrument9, jam_session: jamsession1)
+JamSessionInstrument.create(instrument: instrument10, jam_session: jamsession2)
+JamSessionInstrument.create(instrument: instrument11, jam_session: jamsession3)
+JamSessionInstrument.create(instrument: instrument12, jam_session: jamsession4)
+JamSessionInstrument.create(instrument: instrument13, jam_session: jamsession1)
+JamSessionInstrument.create(instrument: instrument14, jam_session: jamsession2)
 
 puts "Creating 2 requests per jamsession"
 
