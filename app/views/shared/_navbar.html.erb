@@ -1,13 +1,25 @@
 <nav class="navbar">
-<%= link_to root_path class: "logo-left" do %> 
-
+  <%= link_to root_path do %> 
     <h1><i class="fa fa-headphones"></i> Music Connects <span></span></h1>
-    <% end %>
+  <% end %>
+<div class="search-form">
+  <%= form_tag jamsessions_path, method: :get do %>
+  <%= text_field_tag :location,
+    params[:location],
+    class: "form-control",
+    placeholder: "Find a Jam Session" %>
+  <% end %>
+</div>
 
-  <div class="dropdown show"> 
 
-  <i class="fas fa-plus"></i>
-  <button><%= link_to "Create a jam session  ", new_jamsession_path %></button>
+
+
+
+<div class="dropdown show">
+  <%= link_to new_jamsession_path do %> 
+  <i class="fas fa-plus"></i>   
+  <% end %>  
+  <button><%= link_to "Create a jam session ", new_jamsession_path %></button>
   <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9776; Menu</a>
 
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
