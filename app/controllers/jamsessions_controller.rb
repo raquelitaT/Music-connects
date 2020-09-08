@@ -1,12 +1,9 @@
 class JamsessionsController < ApplicationController
   def index
-    @jamsessions = JamSession.find(:all, :conditions => [@jamsessions.starts_at < Datetime.now])
-    raise
-
     if params[:location].present?
-      @jamsessions = JamSession.where("location ILIKE ?", "%#{params[:location]}%")
+      @jamsessions = JamSession.upcoming.where("location ILIKE ?", "%#{params[:location]}%")
     else
-      @jamsessions = JamSession.all
+      @jamsessions = JamSession.upcoming
     end
     if params[:instrument].present?
       @jamsessions = @jamsessions.joins(:instruments).where("instruments.instrument_type ILIKE ?", "%#{params[:instrument]}%")
