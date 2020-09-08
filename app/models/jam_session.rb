@@ -8,4 +8,5 @@ class JamSession < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
   accepts_nested_attributes_for :jam_session_instruments
+  scope :upcoming, -> { where(["ends_at > ?", DateTime.now]) }
 end

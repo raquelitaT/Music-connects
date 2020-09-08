@@ -1,6 +1,5 @@
 // Specific CSS for your home-page
-@charset "UTF-8";
-@import url(font-awesome.min.css);
+
 @import url("https://fonts.googleapis.com/css?family=Signika:300,700");
 
 /*
@@ -56,6 +55,11 @@
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
+	}
+
+	.logo-left {
+		float: left;
+		margin: 10px;
 	}
 
 /* Containers */

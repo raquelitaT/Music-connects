@@ -35,8 +35,12 @@
           <% end %>     
           <% end %>
           <br>
+
+          <% if @user == current_user %>
           <br>
-          <h6><%= link_to  "Add an instrument", edit_user_registration_path %></h6>
+          <h6><%= link_to  "Add an instrument", edit_user_registration_path %></h6>  
+          <% end %>
+          
       </ul>
     </div>
   </div>

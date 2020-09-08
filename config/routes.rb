@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   root to: 'pages#home'
+  # get "/pages/:page" => "pages#show"
+  # root "pages#show", page: "home"
+
   match '/account' => 'users#account', via: :get
 
   resources :jamsessions do
