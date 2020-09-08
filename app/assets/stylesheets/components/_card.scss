@@ -70,14 +70,26 @@
 .content-card {
   padding: 10px;
 }
-.card-jamsession-infos .card-jamsession-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-}
+
+
+.content-card .card-jamsession-user {
+    position: absolute;
+    right: 16px;
+    top: -27px;
+    width: 50px;
+    height: 50px;
+    left: 440px;
+  }
+
+
+// .card-jamsession-infos .card-jamsession-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+//   height: 40px;
+//   object-fit: cover;
+// }
 // card show pages
 .card-show-jamsession {
   overflow: unset;
@@ -149,7 +161,7 @@
   transition: 0.3s;
   color: black;
   border-radius: 2px;
-  flex-grow: 0;
+  flex-grow: 1;
 }
 .card-other-show-info h4 b {
   /* Add shadows to create the "card" effect */
@@ -183,7 +195,7 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   overflow: auto;
   height: 800px;
-  flex-grow: 2;
+  flex-grow: 1;
 }
 
 .sticky-chat-title {
@@ -227,7 +239,7 @@
 
 .two-columns {
   display: flex;
-  gap: 30px;
+  gap: 10px;
 }
 
 .two-columns .second {
@@ -235,3 +247,11 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+
+.two-columns .second {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
