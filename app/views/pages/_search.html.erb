@@ -1,0 +1,16 @@
+<%= form_tag jamsessions_path, method: :get do %>
+<%= text_field_tag :location,
+  params[:location],
+  class: "form-control",
+  placeholder: "Find a jam session near you" %>
+  <%= text_field_tag :instrument,
+  params[:instrument],
+  class: "form-control",
+  placeholder: "Which instruments" %>  
+<%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+
+
+
