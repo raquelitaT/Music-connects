@@ -1,9 +1,12 @@
 class JamsessionsController < ApplicationController
   def index
-    if params[:query].present?
-      @jamsessions = JamSession.where("location ILIKE ?", "%#{params[:query]}%")
+    if params[:location].present?
+      @jamsessions = JamSession.where("location ILIKE ?", "%#{params[:location]}%")
     else
       @jamsessions = JamSession.all
+    end
+    if params[:instrument].present?
+      @jamsessions = @jamsessions.joins(:instruments).where("instruments.instrument_type ILIKE ?", "%#{params[:instrument]}%")
     end
     @markers = @jamsessions.geocoded.map do |jamsession|
       {

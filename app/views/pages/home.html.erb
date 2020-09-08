@@ -8,11 +8,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
-
-
-
-
-
 			<!-- Banner -->
 			<!--
 				To use a video as your background, set data-video to the name of your video without
@@ -26,13 +21,9 @@
 							<h1>This is Music Connects</h1>
 							<p>Connecting people through music. Come jam with us!</p>
 						</header>
-            <%= form_tag jamsessions_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Find a jam session near you" %>
-            <%= submit_tag "Search", class: "btn btn-primary" %>
-            <% end %>
+
+						<%= render "search" %>
+
 					</div>
 
 				</section>
