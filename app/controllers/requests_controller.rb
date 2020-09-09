@@ -32,6 +32,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = "Accepted"
     @request.save
+    RequestMailer.accepted_request(@request).deliver_now
     redirect_to account_path
   end
 
@@ -39,6 +40,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = "Declined"
     @request.save
+    RequestMailer.declined_request(@request).deliver_now
     redirect_to account_path
   end
 
