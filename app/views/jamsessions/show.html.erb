@@ -8,9 +8,9 @@
 
       <div class="card-show-jamsession">
         <% if @jamsession.image.attached? %>
-          <%= cl_image_tag (@jamsession.image.key), height: 200, class: "jamsession-img" %>
+          <%= cl_image_tag (@jamsession.image.key), class: "card-header-image" %>
         <% else %>
-          <%= image_tag 'backgo_mfzx8q_2_jfia6a.jpg', height: 200, width: 300, class: "jamsession-img" %>
+          <%= image_tag 'backgo_mfzx8q_2_jfia6a.jpg', class: "card-header-image" %>
         <% end %>
         <div class="card-show-jamsession-infos">
           <h4><%= @jamsession.title %></h4>
