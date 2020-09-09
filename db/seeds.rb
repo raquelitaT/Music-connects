@@ -29,32 +29,32 @@ user2 = User.create(first_name: "Raquel", last_name: "Tessarollo",
 phone_number: "0655443567", email: "tessarollo.raquel@gmail.com", password: "123456")
 user2.profile_image.attach(io:file2, filename:"user2.png", content_type: 'image/png')
 
-file3 = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599660197/Profile%20pics/emmanuel_macron")
+file3 = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599672580/Profile%20pics/macron_rq9z4z.jpg")
 user3 = User.create(first_name: "Emmanuel", last_name: "Macron",
 phone_number: "+33655443567", email: "emmanuelmacron@gmail.com", password: "123456")
 user3.profile_image.attach(io:file3, filename:"user3.png", content_type: 'image/png')
 
-file4 = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599660106/Profile%20pics/angela_merkel")
+file4 = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599672580/Profile%20pics/angela_vmdhtq.jpg")
 user4 = User.create(first_name: "Angela", last_name: "Merkel",
 phone_number: "+49655443567", email: "angelamerkel@gmail.com", password: "123456")
 user4.profile_image.attach(io:file4, filename:"user4.png", content_type: 'image/png')
 
-file5 = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599660058/Profile%20pics/willem_alexander")
+file5 = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599672536/Profile%20pics/willie_utsvbt.jpg")
 user5 = User.create(first_name: "Willem", last_name: "Alexander",
 phone_number: "+31655443567", email: "willemalexander@gmail.com", password: "123456")
 user5.profile_image.attach(io:file5, filename:"user5.png", content_type: 'image/png')
 
-file6 = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599659978/Profile%20pics/kim_jong_un")
+file6 = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599674800/Profile%20pics/KIM_JONG_GOED_zgsl4f.jpg")
 user6 = User.create(first_name: "Kim", last_name: "Jong Un",
 phone_number: "+85655443567", email: "kimjongun@gmail.com", password: "123456")
 user6.profile_image.attach(io:file6, filename:"user6.png", content_type: 'image/png')
 
-file7 = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599659784/Profile%20pics/trump")
+file7 = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599672580/Profile%20pics/trump_zcowuy.jpg")
 user7 = User.create(first_name: "Donald", last_name: "Trump",
 phone_number: "+85655443567", email: "donaldduckytrump@gmail.com", password: "123456")
-user6.profile_image.attach(io:file7, filename:"user7.png", content_type: 'image/png')
+user7.profile_image.attach(io:file7, filename:"user7.png", content_type: 'image/png')
 
-file8 = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599659704/Profile%20pics/barack")
+file8 = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599672580/Profile%20pics/barack_z3fhu2.jpg")
 user8 = User.create(first_name: "Barack", last_name: "Obahma",
 phone_number: "+85655443567", email: "barackieeeebama@gmail.com", password: "123456")
 user8.profile_image.attach(io:file8, filename:"user8.png", content_type: 'image/png')
@@ -77,25 +77,27 @@ instrument13 = Instrument.create(instrument_type: "Banjo")
 instrument14 = Instrument.create(instrument_type: "Percussion")
 
 puts 'Creating 25 fake jamsessions... (4 per user)'
-filex = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1598622105/wvuec8c3rgvtwtq4spcuvgehz50t.jpg")
+filex = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673312/jamsessions/jamsession4_jsxxw3.jpg")
 jamsession1  = JamSession.create(title: "Music Westerpark", starts_at: "2020-10-08 18:00:00 UTC", ends_at: "2020-10-08 20:00",
 location: "Heisteeg 7 Amsterdam", user: user1, max_capacity: 20, status: "not fully booked", description: "Wild jamsession in Westerpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession1.image.attach(io:filex, filename:"jamsession1.png", content_type: 'image/png')
 
-filey = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1598518874/eletric_guitar_elpgtc.jpg")
+filey = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673312/jamsessions/jamsession6_qph1t5.jpg")
 jamsession2  = JamSession.create(title: "Music Vondelpark", starts_at: "2020-11-09 19:00 UTC", ends_at: "2020-11-09 23:59 UTC",
 location: "Muntplein 3 Amsterdam", user: user1, max_capacity: 10, status: "not fully booked", description: "Wild jamsession in Vondelpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession2.image.attach(io:filey, filename:"jamsession2.png", content_type: 'image/png')
 
-filez = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1598518875/trombone_amrr9u.jpg")
+filez = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673310/jamsessions/jamsession5_yvgdji.jpg")
 jamsession3  = JamSession.create(title: "Jamsession my place", starts_at: "2020-10-12  19:00 UTC", ends_at: "2020-10-12  22:00 UTC",
 location: "Espakker 23 Teteringen", user: user1, max_capacity: 5, status: "fully booked", description: "Wild jamsession in Beatrixpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession3.image.attach(io:filez, filename:"jamsession3.png", content_type: 'image/png')
 
-filed = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1598518876/banjo_lljlgl.jpg")
+filed = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673308/jamsessions/jamsession1_z5k3lt.jpg")
 jamsession4  = JamSession.create(title: "Piano concert", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Nieuwstraat 20 Breda", user: user1, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession4.image.attach(io:filed, filename:"jamsession4.png", content_type: 'image/png')
+
+
 
 filea = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599661943/jamsessions/image_jamsession_22.jpg")
 jamsession5  = JamSession.create(title: "Guitar get together", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
@@ -117,87 +119,90 @@ jamsession8  = JamSession.create(title: "Small session", starts_at: "2020-12-31 
 location: "Singel 210 Amsterdam", user: user2, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession8.image.attach(io:filef, filename:"jamsession4.png", content_type: 'image/png')
 
-fileg = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661930/jamsessions/image_jamsession_15")
+
+
+
+fileg = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673307/jamsessions/jamsession3_nma8bn.jpg")
 jamsession9  = JamSession.create(title: "Big get together", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Taksteeg 1 Amsterdam", user: user4, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession9.image.attach(io:fileg, filename:"jamsession4.png", content_type: 'image/png')
 
-fileh = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661919/jamsessions/image_jamsession_13")
+fileh = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673306/jamsessions/jamsession16_i9wmia.jpg")
 jamsession10  = JamSession.create(title: "Come play with us!", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Nes 4 Amsterdam", user: user4, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession10.image.attach(io:fileh, filename:"jamsession4.png", content_type: 'image/png')
 
-filei = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661907/jamsessions/image_jamsession_14")
+filei = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673306/jamsessions/jamsession21_qacyat.jpg")
 jamsession11  = JamSession.create(title: "Jam with us", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Rokin 64 Amsterdam", user: user4, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession11.image.attach(io:filei, filename:"jamsession4.png", content_type: 'image/png')
 
-filej = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661890/jamsessions/image_jamsession_18")
+filej = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673306/jamsessions/jamsession12_nq3zvm.jpg")
 jamsession12  = JamSession.create(title: "Guitar lovers", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Nieuwendijk 20 Amsterdam", user: user4, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession12.image.attach(io:filej, filename:"jamsession4.png", content_type: 'image/png')
 
-filek = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661879/jamsessions/image_jamsession_16")
+filek = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673306/jamsessions/jamsession2_ayzty3.jpg")
 jamsession13  = JamSession.create(title: "Make some noise", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Aalststraat 2 Breda", user: user5, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession13.image.attach(io:filek, filename:"jamsession4.png", content_type: 'image/png')
 
-filel = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661864/jamsessions/image_jamsession_17")
+filel = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673304/jamsessions/jamsession10_gdfz5s.jpg")
 jamsession14  = JamSession.create(title: "Classical Harmony", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Abeelstraat 6 Breda", user: user5, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession14.image.attach(io:filel, filename:"jamsession4.png", content_type: 'image/png')
 
-filem = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661856/jamsessions/image_jamsession_9")
+filem = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673304/jamsessions/jamsession15_klg2xq.jpg")
 jamsession15 = JamSession.create(title: "Radio Record", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Achterom 2 Breda", user: user5, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession15.image.attach(io:filem, filename:"jamsession4.png", content_type: 'image/png')
 
-fileo = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661847/jamsessions/image_jamsession_10")
+fileo = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673304/jamsessions/jamsession17_frrczj.jpg")
 jamsession16 = JamSession.create(title: "Even if it rains...", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Achtervang 5 Breda", user: user5, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession16.image.attach(io:fileo, filename:"jamsession4.png", content_type: 'image/png')
 
-filep = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661837/jamsessions/image_jamsession_11")
+filep = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673303/jamsessions/jamsession14_ili49o.jpg")
 jamsession17  = JamSession.create(title: "Summer Jam Session", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Baronielaan 88 Breda", user: user6, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession17.image.attach(io:filep, filename:"jamsession4.png", content_type: 'image/png')
 
-fileq = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661827/jamsessions/image_jamsession_8")
+fileq = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673302/jamsessions/jamsession11_owiu3x.jpg")
 jamsession18  = JamSession.create(title: "The X factor", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Bergschot 20 Breda", user: user6, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession18.image.attach(io:fileq, filename:"jamsession4.png", content_type: 'image/png')
 
-filer = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661820/jamsessions/image_jamsession_12")
+filer = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673302/jamsessions/jamsession9_upv9p0.jpg")
 jamsession19 = JamSession.create(title: "Idols Jam Session", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Johansberg 1 Breda", user: user6, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession19.image.attach(io:filer, filename:"jamsession4.png", content_type: 'image/png')
 
-files = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661732/jamsessions/image_jamsession_1")
+files = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673302/jamsessions/jamsession13_ukfknk.jpg")
 jamsession20 = JamSession.create(title: "We rock!!!", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Jorisstraat 1 Breda", user: user6, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession20.image.attach(io:files, filename:"jamsession4.png", content_type: 'image/png')
 
-filet = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661714/jamsessions/image_jamsession_2")
+filet = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673301/jamsessions/jamsession7_dhngqo.jpg")
 jamsession21 = JamSession.create(title: "Meet the rockers", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Bierstraat 1 Rotterdam", user: user8, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession21.image.attach(io:filet, filename:"jamsession4.png", content_type: 'image/png')
 
-fileu = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661696/jamsessions/image_jamsession_3")
+fileu = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599673299/jamsessions/jamsession8_beteld.jpg")
 jamsession22  = JamSession.create(title: "Drum lovers", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Blaak 1 Rotterdam", user: user8, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession22.image.attach(io:fileu, filename:"jamsession4.png", content_type: 'image/png')
 
-filev = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661674/jamsessions/image_jamsession_4")
+filev = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599668552/jamsessions/jamsession18.jpg")
 jamsession23  = JamSession.create(title: "Only classics", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Rederijstraat 2 Rotterdam", user: user8, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession23.image.attach(io:filev, filename:"jamsession4.png", content_type: 'image/png')
 
-filew = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661655/jamsessions/image_jamsession_5")
+filew = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599668539/jamsessions/jamsession19.jpg")
 jamsession24  = JamSession.create(title: "Only pop", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Koningsdam 1 Rotterdam", user: user8, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession24.image.attach(io:filew, filename:"jamsession4.png", content_type: 'image/png')
 
-fileaa = URI.open("https://res.cloudinary.com/dexfami2g/raw/upload/v1599661642/jamsessions/image_jamsession_6")
+fileaa = URI.open("https://res.cloudinary.com/dexfami2g/image/upload/v1599668527/jamsessions/jamsession20.jpg")
 jamsession25 = JamSession.create(title: "Singers welcome", starts_at: "2020-12-31  11:00 UTC", ends_at: "2021-01-01  12:00 UTC",
 location: "Leuvehoofd 1 Rotterdam", user: user3, max_capacity: 18, status: "not fully booked", description: "Wild jamsession in Rembrantpark, everybody is invited, come guys, it will be awesome!", lat: "", lng: "")
 jamsession25.image.attach(io:fileaa, filename:"jamsession4.png", content_type: 'image/png')
