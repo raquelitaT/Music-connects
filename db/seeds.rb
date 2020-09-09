@@ -43,7 +43,7 @@ instrument10 = Instrument.create(instrument_type: "Trumpet")
 instrument11 = Instrument.create(instrument_type: "Microphone")
 instrument12 = Instrument.create(instrument_type: "Harp")
 instrument13 = Instrument.create(instrument_type: "Banjo")
-instrument14 = Instrument.create(instrument_type: "Percussion instrument")
+instrument14 = Instrument.create(instrument_type: "Percussion")
 
 # file3 = URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80")
 # user3 =User.create(first_name: "Roos", last_name: "nieuwland", description: "I am music teacher, like to share my passion with others",
