@@ -8,6 +8,9 @@ class JamsessionsController < ApplicationController
     if params[:instrument].present?
       @jamsessions = @jamsessions.joins(:instruments).where("instruments.instrument_type ILIKE ?", "%#{params[:instrument]}%")
     end
+    if params[:date].present?
+      @jamsessions = @jamsessions.where("starts_at > ?", "%#{params[:date]}%")
+    end
     @markers = @jamsessions.geocoded.map do |jamsession|
       {
         lat: jamsession.latitude,
