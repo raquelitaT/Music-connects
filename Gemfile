@@ -25,6 +25,8 @@ gem 'redis', '~> 4.0'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 
+gem 'letter_opener', group: :development
+
 # gem for map geolocation
 gem 'geocoder'
 
