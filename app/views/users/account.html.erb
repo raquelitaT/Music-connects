@@ -1,21 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12"> 
       <%= render "bio_container" %>
     </div>
   </div>
   <div class="row">
     <div class="col-6">
-    <h4><b>Upcoming Jam Sessions</b></h4>
-      <div class="cards">
-      
-        <% current_user.jam_sessions.each do |jamsession| %>
-        <%= link_to jamsession_path(jamsession) do %>
-          <%= render "jamsessions/card", jamsession: jamsession %>
+      <h4><b>Upcoming Jam Sessions</b></h4>
+
+      <div class="cards">    
+        <% @user.jam_sessions.each do |jamsession| %>
+          <%= link_to jamsession_path(jamsession) do %>
+            <%= render "jamsessions/card", jamsession: jamsession %>
+            
+          <% end %>        
         <% end %>
+
+        <% current_user.requests.each do |request| %>
+            <%= render "users/my_requests", request: request %>
         <% end %>
+        
       </div>
     </div>
+
     <div class="col-6">
       <div class="card-requests">
       <h4><b>Requests for your jam sessions</b></h4>
