@@ -1,7 +1,4 @@
-
-
   <div class="card-jamsession">
-
     <% if jamsession.image.attached? %>
       <%= cl_image_tag (jamsession.image.key), height: 200, crop: :fill, class: "jamsession-img" %>
     <% else %>
