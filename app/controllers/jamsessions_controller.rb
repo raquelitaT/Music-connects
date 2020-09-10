@@ -25,6 +25,13 @@ class JamsessionsController < ApplicationController
     @jamsession = JamSession.find(params[:id])
     @post = Post.new
     @request = Request.new
+    @markers = [
+      {
+        lat: @jamsession.latitude,
+        lng: @jamsession.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { jamsession: @jamsession })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }]
   end
 
   def new

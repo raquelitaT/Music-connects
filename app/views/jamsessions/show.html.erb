@@ -1,10 +1,6 @@
  <div class="profile-container">
    <div class="row">
      <div class="col-8 offset-2">
-<br>
-<br>
-<br>
-<br>
 
       <div class="card-show-jamsession">
         <% if @jamsession.image.attached? %>
@@ -21,13 +17,9 @@
                   <p><strong><i class="fas fa-map-marker-alt"></i> <%= @jamsession.location %></strong></p>
                 <p><strong><i class="fas fa-calendar-day"></i> <%= @jamsession.starts_at %></strong> </p>
                 <p><strong><i class="fas fa-users"></i> <%= @jamsession.status %></strong></p>
-
             <div class="two-columns">
               <div class="first">
-
-
                 <p><strong><i class="fas fa-user"></i> Hosted by <%= @jamsession.user.first_name  %><%= @jamsession.user.last_name %></strong></p>
-
               </div>
               <div class="second">
                 <% if current_user.profile_image.attached? %>
@@ -35,54 +27,34 @@
                 <% else %>
                   <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-jamsession-user" %>
                 <% end %>
-
               </div>
-
             <div class="button-request">
             <%= simple_form_for [ @jamsession, @request ], url: jamsession_requests_path(@jamsession)  do |f| %>
             <%= f.hidden_field :status, value: "pending" %>
             <%= f.submit "Join this event", class: "btn btn-dark" %>
           <% end %>
-
         </div>
             </div>
-
         </div>
-
-
       </div>
-
       <div class="wrap-map-chat">
-
         <div class="card-other-show-info">
           <div id="map"
             style="width: 100%; height: 700px;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-
           <div class="container-card-other-show-info">
-
             <p><b><%= @jamsession.location %></b></p>
             <p><b><%= @jamsession.status %></b></p>
             <p><b><%= @jamsession.starts_at %></b></p>
             <p><b><%= @jamsession.starts_at %></b></p>
           </div>
-
-
-
-
-
         </div>
-
-
-
       <div id="posts" data-jamsession-id="<%= @jamsession.id %>">
-
         <div class="sticky-chat-title">
         <h3>Wanna post a comment on this event?</h3>
         </div>
-
         <% @jamsession.posts.each do |post| %>
           <div class="post-container" id="post-<%= post.id %>">
             <i class="author">
