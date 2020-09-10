@@ -2,30 +2,27 @@
 				<div class="inner">
 					<div class="flex flex-3">
 						<div class="col">
-							<h3>Resources</h3>
+							<h3>Your account</h3>
 							<ul class="alt">
-								<li><a href="#">Blog.</a></li>
-								<li><a href="#">Events.</a></li>
-								<li><a href="#">Community.</a></li>
-								<li><a href="#">Help center.</a></li>
+								<li><a href="#">Settings</a></li>
+								<li><%= link_to "Log out", destroy_user_session_path %></li>
+								<li><a href="#">Help</a></li>
 							</ul>
 						</div>
 						<div class="col">
-							<h3>Partners</h3>
+							<h3>Discover</h3>
 							<ul class="alt">
-								<li><a href="#">Integrations.</a></li>
-								<li><a href="#">Find an expert.</a></li>
-								<li><a href="#">Become a partner.</a></li>
-								<li><a href="#">Toolkit.</a></li>
+								<li><%= link_to "Jam sessions", jamsessions_path %></li>
+								<li><a href="#">Musicians</a></li>
+								<li><a href="#">Instruments</a></li>
 							</ul>
 						</div>
 						<div class="col">
-							<h3>Company</h3>
+							<h3>Music Connects</h3>
 							<ul class="alt">
-								<li><a href="#">About</a></li>
+								<li><a href="#">About us</a></li>
 								<li><a href="#">Press</a></li>
-								<li><a href="#">Reviews.</a></li>
-								<li><a href="#">Contact us.</a></li>
+								<li><a href="#">Contact us</a></li>
 							</ul>
 						</div>
 					</div>
