@@ -5,7 +5,7 @@ class JamsessionsController < ApplicationController
     else
       @jamsessions = JamSession.upcoming
     end
-    if params[:instrument].present?
+    if params[:instrument].present? && params[:instrument] != "Search for instrument..."
       @jamsessions = @jamsessions.joins(:instruments).where("instruments.instrument_type ILIKE ?", "%#{params[:instrument]}%")
     end
     if params[:date].present?

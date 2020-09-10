@@ -7,28 +7,27 @@
     class: "form-control-search",
     placeholder: "Find a jam session near you" %>
   </div>
-    <div class="col-auto">
-  <%= select_tag 'instrument',
-    raw("<option>Search for instrument...</option>
-      <option></option>
-      <option>Guitar</option>
-      <option>Bass Guitar</option>
-      <option>Drums</option>
-      <option>Violin</option>
-      <option>Piano</option>
-      <option>Saxophone</option>
-      <option>Flute</option>
-      <option>Cello</option>
-       <option>Clarinet</option>
-      <option>Trumpet</option>
-       <option>Microphone</option>
-      <option>Harp</option>
-       <option>Banjo</option>
-      <option>Percussion</option>" ),
-    # params[:instrument],
-    class: "form-control-search",
-    placeholder: "Which instruments" %>
-    </div>
+  <div class="col-auto">
+    <%= select_tag 'instrument',
+      raw("<option>Search for instrument...</option>
+        <option>Guitar</option>
+        <option>Bass Guitar</option>
+        <option>Drums</option>
+        <option>Violin</option>
+        <option>Piano</option>
+        <option>Saxophone</option>
+        <option>Flute</option>
+        <option>Cello</option>
+        <option>Clarinet</option>
+        <option>Trumpet</option>
+        <option>Microphone</option>
+        <option>Harp</option>
+        <option>Banjo</option>
+        <option>Percussion</option>" ),
+      # params[:instrument],
+      class: "form-control-search",
+      placeholder: "Which instruments" %>
+  </div>
  <div class="col-auto">
   <%= date_field_tag :date,
     params[:date],

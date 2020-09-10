@@ -1,5 +1,5 @@
 class InstrumentsController < ApplicationController
-    def index
+  def index
     @instrument = Instrument.all
   end
 
