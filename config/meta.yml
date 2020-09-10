@@ -1,4 +1,4 @@
 meta_product_name: "Music Connects"
 meta_title: "Connecting people through music. Come jam with us!"
 meta_description: "Find friends to Jam together. Organize Jam Sessions and find the musicians you prefer."
-meta_image: "jam-session.jpg" # should exist in `app/assets/images/`
+meta_image: "jam-session.png" # should exist in `app/assets/images/`
