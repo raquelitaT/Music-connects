@@ -25,3 +25,69 @@
 //   overflow: hidden;
 //   background-color: #333;
 // }
+
+.nav-button {
+  margin: 0 10px;
+}
+
+.nav-button:hover {
+  text-decoration: none;
+}
+
+.nav-button:before {
+ font-family: "Font Awesome 5 Free";
+ font-weight: 900;
+ content: "\f067";
+ margin-right: 10px;
+}
+
+@media (max-width: 980px) {
+  body {
+    padding-top: 0px !important;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .navbar {
+  height: 130px !important;
+
+  }
+}
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+ .navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.5rem 1rem;
+
+}
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+ .navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+}
+
+
+
+// /*Medium devices (tablets, 768px and up)*/
+// @media (min-width: 1200px) {
+// .navbar {
+//     position: relative;
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 0.5rem 1rem;
+// }
+// }

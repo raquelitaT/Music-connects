@@ -33,14 +33,20 @@
   #map {
     display: none;
   }
+  .container-card-other-show-info {
+    display: none;
+  }
 }
 
 /*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 1080px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
   #map {
+    display: none;
+  }
+   .container-card-other-show-info {
     display: none;
   }
 }
