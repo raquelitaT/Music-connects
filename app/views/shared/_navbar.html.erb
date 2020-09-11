@@ -14,11 +14,7 @@
         placeholder: "Find a Jam Session" %>
       <% end %>
     </div>
-    <%= link_to new_jamsession_path do %>
-      &nbsp;
-    <i class="fas fa-plus"> </i>
-    <% end %>
-    <button><%= link_to "Create a jam session ", new_jamsession_path %></button>
+    <%= link_to "Create a jam session ", new_jamsession_path, class: "nav-button" %>
     <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9776; Menu</a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
         <%= link_to "Account", account_path, class: "dropdown-item" %>
